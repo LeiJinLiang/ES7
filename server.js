@@ -9,6 +9,7 @@ const config = require('./webpack.config.js')
 
 const isDeveloping = process.env.NODE_ENV !== 'production'
 const port = isDeveloping ? 3000 : process.env.PORT
+const compression = require('compression');
 
 const app = express()
 
@@ -35,6 +36,7 @@ if (isDeveloping || 1) {
 
 
 }else{
+    app.use(compression());
     app.use(express.static(__dirname + '/dist'))
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, 'dist/index.html'))
