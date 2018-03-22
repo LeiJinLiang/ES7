@@ -4,9 +4,10 @@ import Man from './Man'
 
 import arrayMethod from '../arrayMethods/arrayMethod'
 
-import { _ajax, _filter , _bubble } from '../util'
+import { _ajax, _filter , _bubble , _reduce1, _reduce_filter} from '../util'
 
 import fetchApi from '../async/async'
+import {_reduce} from "../util";
 
 const log = console.log.bind(console)
 
@@ -36,6 +37,12 @@ const testAsync = async () => {
 
 testAsync();
 
+
+const _reducetest = _reduce1([[1,2],[3,4]])
+log('_reducetest',_reducetest)
+const _reducetest2 = _reduce_filter([1,2,1,2,3,5,4,5,3,4,4,4,4]);
+log('_reducetest2',_reducetest2)
+
 class Counter extends Component {
     constructor(props){
         super(props)
@@ -58,7 +65,7 @@ class Counter extends Component {
 
     render(){
         return (
-            <div>
+            <div style={{ boxSizing : 'border-box', width : '100%', height : '40px', border : '1px solid', padding : '5px'}}>
                 <button onClick = {this.incrementCount}>add</button>
                 {this.state.count}
             </div>
