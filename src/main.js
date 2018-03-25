@@ -1,9 +1,10 @@
 import React  from 'react'
 import { render } from 'react-dom'
-import Counter from './components/Counter'
+import PureCssSlider from './components/PureCssSlider'
+
 
 render((<div>
-        <Counter />
+        <PureCssSlider />
     </div>),
     document.getElementById('root')
 )

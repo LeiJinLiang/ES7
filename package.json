@@ -26,7 +26,8 @@
   },
   "peerDependencies": {
     "express": "^4.16.3",
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "styled-components": "^3.2.3"
   },
   "dependencies": {
     "compression": "^1.7.2",

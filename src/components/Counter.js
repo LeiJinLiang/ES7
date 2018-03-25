@@ -7,7 +7,7 @@ import arrayMethod from '../arrayMethods/arrayMethod'
 import { _ajax, _filter , _bubble , _reduce1, _reduce_filter} from '../util'
 
 import fetchApi from '../async/async'
-import {_reduce} from "../util";
+
 
 const log = console.log.bind(console)
 
@@ -33,6 +33,7 @@ _bubble([1,5,4,3])
 
 const testAsync = async () => {
     const t = await fetchApi('https://api.douban.com/v2/user/aisk')
+    console.log('t',t);
 }
 
 testAsync();
