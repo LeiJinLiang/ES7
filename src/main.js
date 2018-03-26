@@ -1,9 +1,9 @@
 import React  from 'react'
 import { render } from 'react-dom'
-import Slider from './components/Slider'
+import PureCassSilder from './components/PureCssSlider'
 
 render((<div>
-        <Slider />
+        <PureCassSilder />
     </div>),
     document.getElementById('root')
 )

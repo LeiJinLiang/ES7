@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
+import { _quick_sort } from '../util'
+
+const arr = [85, 24, 63, 45, 17, 31, 96, 50]
+
+console.log('_quick_sort',_quick_sort(arr))
 
 const loop = keyframes`
  0% {transform: translate(0,0);}

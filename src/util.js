@@ -76,5 +76,22 @@ const _deep_clone = obj => {
 }
 
 
+const _quick_sort = (arr) => {
+    if(arr.length<= 1){
+        return arr
+    }
+    const idx = Math.floor(arr.length/2)
+    const prev = arr.splice(idx,1)[0]
+    let left = [];
+    let right = [];
+    for(var i =0 ; i< arr.length; i++){
+        if(arr[i]<prev){
+           left.push(arr[i])
+        }else{
+            right.push(arr[i])
+        }
+    }
+    return _quick_sort(left).concat([prev],_quick_sort(right))
+}
 
-export { _ajax , _filter, _bubble, _reduce1, _reduce_filter }
+export { _ajax , _filter, _bubble, _reduce1, _reduce_filter, _quick_sort }

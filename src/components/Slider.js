@@ -111,6 +111,16 @@ class Slider extends Component{
         }
 
     }
+
+    handleOnMouseOver = () => {
+        clearInterval(this.state.timer);
+    }
+
+    handleOnMouseOut = () => {
+        const _self = this
+        this.state.timer = setInterval(_self.handleMove,1000);
+    }
+
     componentDidMount() {
         const _self = this
        this.state.timer = setInterval(_self.handleMove,1000);
@@ -119,7 +129,7 @@ class Slider extends Component{
     render(){
         const { data } = this.state
         return(
-            <Wrapper>
+            <Wrapper onMouseOver = {this.handleOnMouseOver} onMouseOut = {this.handleOnMouseOut}>
                 <Content innerRef={(search) => { this.search = search }}>
                     {data.map((item,idx)=>(
                         this.renderItem(item,idx)
