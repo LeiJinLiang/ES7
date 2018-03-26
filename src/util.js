@@ -59,4 +59,22 @@ const _reduce_filter =(arr) => {
     return result
 }
 
+Object.prototype.clone = function () {
+    var o = this.constructor === Array? [] : {}
+    for(var p in this){
+        o[p] = typeof this[p] === 'object'?this[p].clone():this[p]
+    }
+    return o
+}
+
+const _deep_clone = obj => {
+    let o = obj.constructor === Array ? [] : {}
+    for(let e in obj){
+        o[e] = typeof obj[e] === 'object'? _deep_clone(obj[e]) : obj[e]
+    }
+    return o
+}
+
+
+
 export { _ajax , _filter, _bubble, _reduce1, _reduce_filter }
