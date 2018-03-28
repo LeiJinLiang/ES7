@@ -41,6 +41,8 @@ const Content = styled.div`
     font-size: 0;
     animation: ${loop} 10s linear infinite;
 `
+
+// animation : 动画name 持续时间 效果 执行次数
 const Item = styled.img`
     width: 500px;
     height: 300px;

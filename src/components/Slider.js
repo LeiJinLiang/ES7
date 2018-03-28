@@ -13,7 +13,7 @@ const Content = styled.div`
     width: 9999px;
 	height: 300px;
 	position: relative;
-	transition: left 400ms linear;
+	transition: transform 400ms linear;
 `
 
 const Item = styled.div`
@@ -96,17 +96,21 @@ class Slider extends Component{
 
     handleClick = (idx) => {
         if (this.search) {
-            this.search.style.left = -(960*idx)+'px'
+            // this.search.style.left = -(960*idx)+'px'
+            const distance =  -(960*idx)+'px';
+            this.search.style.webkitTransform="translate3d("+distance+",0,0)"
         }
     }
 
     handleMove = () => {
         if (this.search && this.state.count < 5) {
             console.log(2);
-            this.search.style.left = -(960*this.state.count)+'px'
+            // this.search.style.left = -(960*this.state.count)+'px'
+            this.search.style.webkitTransform="translate3d("+(-960*this.state.count)+'px'+",0,0)"
             this.state.count = this.state.count + 1;
         }else{
-            this.search.style.left = '0px';
+            // this.search.style.left = '0px';
+            this.search.style.webkitTransform = "translate3d(0,0,0)"
             this.state.count = 0;
         }
 
