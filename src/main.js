@@ -1,9 +1,9 @@
 import React  from 'react'
 import { render } from 'react-dom'
-import PureCassSilder from './components/PureCssSlider'
+import Client from './client'
 
 render((<div>
-        <PureCassSilder />
+       <Client />
     </div>),
     document.getElementById('root')
 )
