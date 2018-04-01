@@ -5,14 +5,18 @@ class Child extends Component {
         super(props)
     }
 
-    shouldComponentUpdate() {
-        return false
+    handleClick =() => {
+        console.log('=========')
+        this.props.add()
     }
 
     render() {
-        console.log('---------update');
+        console.log('this.props',this.props)
         return(
-            <h1>hhhhhh</h1>
+            <main>
+                    <h1>{this.props.value}</h1>
+                    <button onClick = {this.handleClick}>+</button>
+            </main>
         )
     }
 }

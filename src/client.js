@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Slider from './components/Slider'
-import Child from './components/Child'
-
+import ChildCon from './container/ChildCon'
 const BasicExample = () => (
     <Router>
         <div>
@@ -17,7 +16,7 @@ const BasicExample = () => (
 
             <hr />
 
-            <Route exact path="/" component={Child} />
+            <Route exact path="/" component={ChildCon} />
             <Route path="/about" component={Slider} />
         </div>
     </Router>
