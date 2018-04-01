@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Slider from './components/Slider'
 import ChildCon from './container/ChildCon'
+import AsyncCon from './container/AsyncCon'
 const BasicExample = () => (
     <Router>
         <div>
@@ -12,12 +13,16 @@ const BasicExample = () => (
                 <li>
                     <Link to="/about">About</Link>
                 </li>
+                <li>
+                    <Link to="/more">More</Link>
+                </li>
             </ul>
 
             <hr />
 
             <Route exact path="/" component={ChildCon} />
             <Route path="/about" component={Slider} />
+            <Route path="/more" component = {AsyncCon}/>
         </div>
     </Router>
 );

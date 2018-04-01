@@ -6,6 +6,7 @@ class Async extends Component {
     }
 
     render(){
+        console.log('this.props',this.props)
         return(<div>
             Async
         </div>)

@@ -1,13 +1,15 @@
 import { connect } from 'react-redux'
 import Async from '../components/Async'
+import REQUEST_DATA from '../action/AsyncAction'
 
 
 const mapStateToProps = (state) =>{
-    return { data : state.payload}
+    console.log('=====',state)
+    return { data : state.AsyncReducer.payload}
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { value : 0}
+    return { ajax : url => dispatch(REQUEST_DATA,url)}
 }
 
 const AsyncCon = connect(mapStateToProps,mapDispatchToProps)(Async)

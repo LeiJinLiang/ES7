@@ -11,7 +11,6 @@ class Child extends Component {
     }
 
     render() {
-        console.log('this.props',this.props)
         return(
             <main>
                     <h1>{this.props.value}</h1>
