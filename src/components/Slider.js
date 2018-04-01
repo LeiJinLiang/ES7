@@ -103,17 +103,18 @@ class Slider extends Component{
     }
 
     handleMove = () => {
-        if (this.search && this.state.count < 5) {
-            console.log(2);
-            // this.search.style.left = -(960*this.state.count)+'px'
-            this.search.style.webkitTransform="translate3d("+(-960*this.state.count)+'px'+",0,0)"
-            this.state.count = this.state.count + 1;
-        }else{
-            // this.search.style.left = '0px';
-            this.search.style.webkitTransform = "translate3d(0,0,0)"
-            this.state.count = 0;
+        if(this.search){
+            if ( this.state.count < 5) {
+                console.log(2);
+                // this.search.style.left = -(960*this.state.count)+'px'
+                this.search.style.webkitTransform="translate3d("+(-960*this.state.count)+'px'+",0,0)"
+                this.state.count = this.state.count + 1;
+            }else{
+                // this.search.style.left = '0px';
+                this.search.style.webkitTransform = "translate3d(0,0,0)"
+                this.state.count = 0;
+            }
         }
-
     }
 
     handleOnMouseOver = () => {
@@ -128,6 +129,12 @@ class Slider extends Component{
     componentDidMount() {
         const _self = this
        this.state.timer = setInterval(_self.handleMove,1000);
+    }
+
+    componentWillUnmount() {
+        const self = this
+        clearInterval(self.state.timer);
+        console.log('-----componentWillUnMount-----')
     }
 
     render(){
