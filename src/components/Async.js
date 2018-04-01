@@ -6,9 +6,13 @@ class Async extends Component {
     }
 
     render(){
-        console.log('this.props',this.props)
+        const { data } =this.props
         return(<div>
-            Async
+            <ul>
+                {data.map((item,idx)=>(
+                    <li key = {idx}><strong>{item.id}</strong></li>
+                ))}
+            </ul>
         </div>)
     }
 }
