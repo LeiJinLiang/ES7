@@ -4,7 +4,7 @@ import Child from '../components/Child'
 import INREMENT_VALUE from '../action/ChildAction'
 
 const mapStateToProps = (state) => {
-     return { value : state.value }
+     return { value : state.childreducer.value }
 }
 
 const mapDispatchToProps = (dispatch) => {
