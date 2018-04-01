@@ -1,4 +1,4 @@
-
+// Decorator 类的装饰器  用来修饰类的行为
 
 
 function Man() {
@@ -28,6 +28,9 @@ var DecorateArmour = function (man) {
 }
 
 DecorateArmour.prototype = new Decorator();
+
+
+
 
 export { DecorateArmour, Man }
 

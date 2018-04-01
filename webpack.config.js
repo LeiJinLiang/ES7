@@ -36,7 +36,8 @@ const config = {
                         loader : 'babel-loader',
                         options : {
                            presets : ['react', 'es2015','stage-0', 'react-hmre'],
-                           plugins : ['transform-async-to-generator']
+                           plugins : ['transform-async-to-generator'],
+                           plugins : ["transform-decorators-legacy"]
                         }
                     }
                 ]
