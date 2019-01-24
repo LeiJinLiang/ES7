@@ -94,4 +94,8 @@ const _quick_sort = (arr) => {
     return _quick_sort(left).concat([prev],_quick_sort(right))
 }
 
-export { _ajax , _filter, _bubble, _reduce1, _reduce_filter, _quick_sort }
+const decorator = f => a => f(a)
+
+
+
+export { _ajax , _filter, _bubble, _reduce1, _reduce_filter, _quick_sort , decorator}

@@ -1,25 +1,23 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Slider from './components/Slider'
+import asyncComponent from './asyncComponent'
+const Slider = asyncComponent(()=>import('./components/Slider'))
 import ChildCon from './container/ChildCon'
 import AsyncCon from './container/AsyncCon'
+
+
+const Home = () => (
+    <div>
+        <h2>Home</h2>
+    </div>
+);
+
 const BasicExample = () => (
     <Router>
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/about">About</Link>
-                </li>
-                <li>
-                    <Link to="/more">More</Link>
-                </li>
-            </ul>
-
-            <hr />
-
+            <p><Link to="/">Home</Link></p>
+            <p><Link to="/about">About</Link></p>
+            <p><Link to="/more">More</Link></p>
             <Route exact path="/" component={ChildCon} />
             <Route path="/about" component={Slider} />
             <Route path="/more" component = {AsyncCon}/>
@@ -27,11 +25,7 @@ const BasicExample = () => (
     </Router>
 );
 
-const Home = () => (
-    <div>
-        <h2>Home</h2>
-    </div>
-);
+
 
 
 export default BasicExample;
