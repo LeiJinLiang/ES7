@@ -13,7 +13,7 @@ const compression = require('compression');
 
 const app = express()
 
-if (isDeveloping || 1) {
+if (isDeveloping) {
     const compiler = webpack(config)
     const middleware =  webpackMiddleware(compiler,{
         publicPath: config.output.publicPath,

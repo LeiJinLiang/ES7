@@ -6,8 +6,8 @@
   "author": "jinlei",
   "license": "MIT",
   "scripts": {
-    "start": "webpack --mode development && node server",
-    "dev": "webpack --mode development",
+    "start": "export NODE_ENV= development &&npx webpack && node server",
+    "build": "export NODE_ENV= production && npx webpack",
     "test": ""
   },
   "devDependencies": {

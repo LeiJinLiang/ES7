@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import asyncComponent from './asyncComponent'
 const Slider = asyncComponent(()=>import('./components/Slider'))
-import ChildCon from './container/ChildCon'
-import AsyncCon from './container/AsyncCon'
+const ChildCon = asyncComponent(()=> import('./container/ChildCon'))
+const AsyncCon = asyncComponent(()=> import('./container/AsyncCon'))
 
 
 const Home = () => (

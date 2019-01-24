@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const path = require('path')
 const config = {
-    mode : 'development',
+    mode : 'production',
     devtool : 'eval-source-map',
     entry : [
         'babel-polyfill',
@@ -11,7 +11,7 @@ const config = {
     ],
     output : {
         path: path.join(__dirname, '/dist/'),
-        filename: '[name].js',
+        filename: '[name][hash].js',
         publicPath: '/'
     },
     plugins : [
