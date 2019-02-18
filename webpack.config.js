@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const path = require('path')
 const config = {
-    mode : 'production',
+    mode : process.env.NODE_ENV !== 'production'?'development':'production',
     devtool : 'eval-source-map',
     entry : [
         'babel-polyfill',
