@@ -56,12 +56,12 @@ class AnchorComponent extends React.Component{
 
     step = (timestamp) => {
         this.start += this.speed
-        window.scrollTo(0,this.start)
+        window.scrollTo(0,Math.abs(this.start))
         if (this.start <=  this.activeOffsetTop) {
             this.requestID =  window.requestAnimationFrame(this.step);
         }else{
             window.scrollTo(0,this.activeOffsetTop)
-            this.start = 0
+            // this.start = 0
             window.cancelAnimationFrame(this.requestID)
         }
     }
@@ -69,11 +69,12 @@ class AnchorComponent extends React.Component{
 
     handleMove = (idx) => {
         this.activeOffsetTop = this.$list[idx].offsetTop;
-        window.scrollTo({
-            top : this.$list[idx].offsetTop,
-            behavior: "smooth"
-        })
-        // this.requestID = window.requestAnimationFrame(this.step);
+        // window.scrollTo({
+        //     top : this.$list[idx].offsetTop,
+        //     behavior: "smooth"
+        // })
+        this.start =  this.activeOffsetTop - window.screen.height
+        this.requestID = window.requestAnimationFrame(this.step);
     }
 
     handleTab = (idx) => {
